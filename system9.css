@@ -12,45 +12,52 @@ section {
     padding: 0;
     max-width: 800px;
     position: relative;
+    border-radius: 2px;
 }
 
 /* The title bar */
-section > h2:first-child {
+section > h1:first-child {
     margin: 0;
     padding: 2px 4px;
     font-size: 12px;
-    font-weight: normal;
+    font-weight: bold;
     text-align: center;
     border-bottom: 1px solid #000000;
-    background-color: #ffffff;
+    background-color: #dddddd; /* System 9 gray */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #aaaaaa;
+    text-shadow: 1px 1px 0 #ffffff; /* System 9 text bevel */
 }
 
 /* The stripes on the left and right of the text */
-section > h2:first-child::before,
-section > h2:first-child::after {
+section > h1:first-child::before,
+section > h1:first-child::after {
     content: "";
     flex-grow: 1;
     height: 10px;
     background-image: repeating-linear-gradient(
         to bottom,
-        #000000,
-        #000000 1px,
+        #aaaaaa,
+        #aaaaaa 1px,
         #ffffff 1px,
         #ffffff 2px
     );
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #aaaaaa;
+    box-shadow: 0 1px 0 #ffffff;
 }
 
-section > h2:first-child::before {
+section > h1:first-child::before {
     margin-right: 6px;
-    margin-left: 14px; /* Space for the close box */
+    margin-left: 20px; /* Space for the close box + padding */
 }
 
-section > h2:first-child::after {
+section > h1:first-child::after {
     margin-left: 6px;
+    margin-right: 34px; /* Space for the maximize and shrink boxes + padding */
 }
 
 /* The close box */
@@ -62,13 +69,78 @@ section::before {
     width: 11px;
     height: 11px;
     border: 1px solid #000000;
-    background-color: #ffffff;
+    background-color: #dddddd;
     z-index: 2;
-    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+    box-shadow: inset 1px 1px 0 #aaaaaa, inset -1px -1px 0 #ffffff; /* Recessed */
+}
+
+/* The maximize and shrink boxes */
+section::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    width: 26px;
+    height: 13px; /* 11px + 2px border */
+    background-color: transparent;
+    z-index: 2;
+    /* Draw the two boxes with borders and inset shadows using linear gradients */
+    background-image: 
+        /* Maximize Box (Left) */
+        linear-gradient(#aaaaaa, #aaaaaa), /* Top inset shadow */
+        linear-gradient(#aaaaaa, #aaaaaa), /* Left inset shadow */
+        linear-gradient(#ffffff, #ffffff), /* Bottom inset highlight */
+        linear-gradient(#ffffff, #ffffff), /* Right inset highlight */
+        linear-gradient(#dddddd, #dddddd), /* Background */
+        linear-gradient(#000000, #000000), /* Border */
+        
+        /* Shrink Box (Right) */
+        linear-gradient(#aaaaaa, #aaaaaa), /* Top inset shadow */
+        linear-gradient(#aaaaaa, #aaaaaa), /* Left inset shadow */
+        linear-gradient(#ffffff, #ffffff), /* Bottom inset highlight */
+        linear-gradient(#ffffff, #ffffff), /* Right inset highlight */
+        linear-gradient(#dddddd, #dddddd), /* Background */
+        linear-gradient(#000000, #000000); /* Border */
+        
+    background-size: 
+        /* Maximize Box */
+        9px 1px, /* Top inset shadow */
+        1px 9px, /* Left inset shadow */
+        9px 1px, /* Bottom inset highlight */
+        1px 9px, /* Right inset highlight */
+        9px 9px, /* Background */
+        11px 11px, /* Border */
+        
+        /* Shrink Box */
+        9px 1px, /* Top inset shadow */
+        1px 9px, /* Left inset shadow */
+        9px 1px, /* Bottom inset highlight */
+        1px 9px, /* Right inset highlight */
+        9px 9px, /* Background */
+        11px 11px; /* Border */
+        
+    background-position: 
+        /* Maximize Box */
+        1px 1px, /* Top inset shadow */
+        1px 1px, /* Left inset shadow */
+        1px 9px, /* Bottom inset highlight */
+        9px 1px, /* Right inset highlight */
+        1px 1px, /* Background */
+        0 1px, /* Border */
+        
+        /* Shrink Box */
+        16px 1px, /* Top inset shadow */
+        16px 1px, /* Left inset shadow */
+        16px 9px, /* Bottom inset highlight */
+        24px 1px, /* Right inset highlight */
+        16px 1px, /* Background */
+        15px 1px; /* Border */
+        
+    background-repeat: no-repeat;
 }
 
 /* Inner content padding */
-section > *:not(h2:first-child) {
+section > *:not(h1:first-child) {
     padding-left: 10px;
     padding-right: 10px;
 }
