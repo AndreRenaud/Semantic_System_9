@@ -1,9 +1,110 @@
 body {
     font-family: "Chicago", sans-serif;
-    background-color: #c0c0c0; /* Classic System 9 desktop gray fallback */
+    background-color: #636398; /* Classic System 9 desktop blue/purple fallback */
     background-image: url('images/system9-tile.png');
     background-repeat: repeat;
     color: #000000;
+    margin: 0; /* Remove default body margin so menubar touches edges */
+    padding-top: 24px; /* Space for the fixed menubar */
+}
+
+/* --- Menubar (nav inside header) --- */
+header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background-color: #dddddd;
+    border-bottom: 1px solid #000000;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 1px 0 #ffffff; /* Subtle highlight below the black border */
+}
+
+header nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+}
+
+/* Top-level menu items */
+header nav > ul > li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    cursor: default;
+}
+
+header nav > ul > li > a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+}
+
+/* Hover state for top-level menu items */
+header nav > ul > li:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+header nav > ul > li:hover > a {
+    color: #ffffff;
+}
+
+/* Dropdown menus (nested ul) */
+header nav > ul > li > ul {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 24px; /* Just below the menubar */
+    left: 0;
+    background-color: #dddddd;
+    border: 1px solid #000000;
+    box-shadow: 2px 2px 0 #000000; /* Classic drop shadow */
+    list-style: none;
+    margin: 0;
+    padding: 2px 0;
+    min-width: 150px;
+    z-index: 1001;
+}
+
+/* Show dropdown on hover */
+header nav > ul > li:hover > ul {
+    display: block;
+}
+
+/* Dropdown menu items */
+header nav > ul > li > ul > li {
+    padding: 0 10px;
+}
+
+header nav > ul > li > ul > li > a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    display: block;
+    padding: 2px 0;
+}
+
+/* Hover state for dropdown items */
+header nav > ul > li > ul > li:hover {
+    background-color: #000000;
+}
+
+header nav > ul > li > ul > li:hover > a {
+    color: #ffffff;
+}
+
+/* Hide the rest of the header content since the nav is the menubar */
+header > h1, 
+header > p {
+    display: none;
 }
 
 section {
@@ -20,8 +121,8 @@ section {
 /* The title bar */
 section > h1:first-child {
     margin: 0;
-    padding: 2px 4px;
-    font-size: 12px;
+    padding: 4px 6px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     border-bottom: 1px solid #000000;
@@ -39,7 +140,7 @@ section > h1:first-child::before,
 section > h1:first-child::after {
     content: "";
     flex-grow: 1;
-    height: 10px;
+    height: 12px;
     background-image: repeating-linear-gradient(
         to bottom,
         #aaaaaa,
@@ -54,22 +155,22 @@ section > h1:first-child::after {
 
 section > h1:first-child::before {
     margin-right: 6px;
-    margin-left: 20px; /* Space for the close box + padding */
+    margin-left: 24px; /* Space for the close box + padding */
 }
 
 section > h1:first-child::after {
     margin-left: 6px;
-    margin-right: 34px; /* Space for the maximize and shrink boxes + padding */
+    margin-right: 40px; /* Space for the maximize and shrink boxes + padding */
 }
 
 /* The close box */
 section::before {
     content: "";
     position: absolute;
-    top: 3px;
-    left: 4px;
-    width: 11px;
-    height: 11px;
+    top: 5px;
+    left: 6px;
+    width: 13px;
+    height: 13px;
     border: 1px solid #000000;
     background-color: #dddddd;
     z-index: 2;
@@ -80,10 +181,10 @@ section::before {
 section::after {
     content: "";
     position: absolute;
-    top: 3px;
-    right: 4px;
-    width: 26px;
-    height: 13px; /* 11px + 2px border */
+    top: 5px;
+    right: 6px;
+    width: 30px;
+    height: 15px; /* 13px + 2px border */
     background-color: transparent;
     z-index: 2;
     /* Draw the two boxes with borders and inset shadows using linear gradients */
@@ -106,37 +207,37 @@ section::after {
         
     background-size: 
         /* Maximize Box */
-        9px 1px, /* Top inset shadow */
-        1px 9px, /* Left inset shadow */
-        9px 1px, /* Bottom inset highlight */
-        1px 9px, /* Right inset highlight */
-        9px 9px, /* Background */
-        11px 11px, /* Border */
+        11px 1px, /* Top inset shadow */
+        1px 11px, /* Left inset shadow */
+        11px 1px, /* Bottom inset highlight */
+        1px 11px, /* Right inset highlight */
+        11px 11px, /* Background */
+        13px 13px, /* Border */
         
         /* Shrink Box */
-        9px 1px, /* Top inset shadow */
-        1px 9px, /* Left inset shadow */
-        9px 1px, /* Bottom inset highlight */
-        1px 9px, /* Right inset highlight */
-        9px 9px, /* Background */
-        11px 11px; /* Border */
+        11px 1px, /* Top inset shadow */
+        1px 11px, /* Left inset shadow */
+        11px 1px, /* Bottom inset highlight */
+        1px 11px, /* Right inset highlight */
+        11px 11px, /* Background */
+        13px 13px; /* Border */
         
     background-position: 
         /* Maximize Box */
         1px 1px, /* Top inset shadow */
         1px 1px, /* Left inset shadow */
-        1px 9px, /* Bottom inset highlight */
-        9px 1px, /* Right inset highlight */
+        1px 11px, /* Bottom inset highlight */
+        11px 1px, /* Right inset highlight */
         1px 1px, /* Background */
         0 1px, /* Border */
         
         /* Shrink Box */
-        16px 1px, /* Top inset shadow */
-        16px 1px, /* Left inset shadow */
-        16px 9px, /* Bottom inset highlight */
-        24px 1px, /* Right inset highlight */
-        16px 1px, /* Background */
-        15px 1px; /* Border */
+        18px 1px, /* Top inset shadow */
+        18px 1px, /* Left inset shadow */
+        18px 11px, /* Bottom inset highlight */
+        28px 1px, /* Right inset highlight */
+        18px 1px, /* Background */
+        17px 1px; /* Border */
         
     background-repeat: no-repeat;
 }
