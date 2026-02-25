@@ -1,6 +1,8 @@
 body {
     font-family: "Chicago", sans-serif;
-    background-color: #c0c0c0; /* Classic System 9 desktop gray */
+    background-color: #c0c0c0; /* Classic System 9 desktop gray fallback */
+    background-image: url('images/system9-tile.png');
+    background-repeat: repeat;
     color: #000000;
 }
 
@@ -143,6 +145,15 @@ section::after {
 section > *:not(h1:first-child) {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+/* Fix for lists flowing outside the window */
+section ul,
+section ol,
+section dl {
+    padding-left: 40px; /* Ensure bullets/numbers have enough space inside the section */
+    margin-left: 20px;
+    box-sizing: border-box;
 }
 
 section > *:last-child {
