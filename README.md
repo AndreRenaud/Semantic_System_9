@@ -1,0 +1,1 @@
+For reference images of actual MacOS 9 see: https://guidebookgallery.org/screenshots/macos90

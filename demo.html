@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML Elements Demo</title>
+    <link rel="stylesheet" href="system9.css">
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <h1>Semantic HTML Elements Demonstration</h1>
+        <p>A simple page showcasing major HTML5 elements without any CSS styling.</p>
+        <nav>
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#text">Text Formatting</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#media">Media & Figures</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#interactive">Interactive Elements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- Section: Text Formatting -->
+        <section id="text">
+            <h2>Text Formatting and Inline Elements</h2>
+            <article>
+                <header>
+                    <h3>Article Heading</h3>
+                    <p>Published on <time datetime="2026-02-25">February 25, 2026</time></p>
+                </header>
+                <p>
+                    This is a standard paragraph. It contains <strong>strong importance text</strong>, 
+                    <em>emphasized text</em>, and <mark>highlighted or marked text</mark>. 
+                    You can also use <s>strikethrough</s> to indicate deleted content, or 
+                    <del>deleted text</del> and <ins>inserted text</ins> for document edits.
+                </p>
+                <p>
+                    Here is some <code>inline computer code</code>, a <kbd>Keyboard Input</kbd>, 
+                    and a <samp>sample output</samp>. We can also use abbreviations like 
+                    <abbr title="HyperText Markup Language">HTML</abbr>.
+                </p>
+                <blockquote>
+                    <p>This is a blockquote element, used for longer quotes from another source.</p>
+                    <footer>— <cite>Source of the quote</cite></footer>
+                </blockquote>
+                <p>And this is an <q>inline quote</q> within a paragraph.</p>
+            </article>
+        </section>
+
+        <hr>
+
+        <!-- Section: Lists -->
+        <section id="lists">
+            <h2>Lists</h2>
+            
+            <h3>Unordered List (Bullet Points)</h3>
+            <ul>
+                <li>First item</li>
+                <li>Second item
+                    <ul>
+                        <li>Nested item A</li>
+                        <li>Nested item B</li>
+                    </ul>
+                </li>
+                <li>Third item</li>
+            </ul>
+
+            <h3>Ordered List (Numbered)</h3>
+            <ol>
+                <li>Step one</li>
+                <li>Step two</li>
+                <li>Step three</li>
+            </ol>
+
+            <h3>Description List</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>The standard markup language for documents designed to be displayed in a web browser.</dd>
+                <dt>CSS</dt>
+                <dd>A style sheet language used for describing the presentation of a document.</dd>
+            </dl>
+        </section>
+
+        <hr>
+
+        <!-- Section: Media and Figures -->
+        <section id="media">
+            <h2>Media and Figures</h2>
+            <figure>
+                <img src="https://via.placeholder.com/300x150" alt="A placeholder image showing dimensions 300x150">
+                <figcaption>Fig. 1 - A placeholder image wrapped in a figure element.</figcaption>
+            </figure>
+            
+            <h3>Audio and Video (Placeholders)</h3>
+            <audio controls>
+                <source src="audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <br><br>
+            <video width="320" height="240" controls>
+                <source src="movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <hr>
+
+        <!-- Section: Tables -->
+        <section id="tables">
+            <h2>Tables</h2>
+            <table>
+                <caption>Employee Data Table</caption>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Alice Smith</td>
+                        <td>Engineering</td>
+                        <td>Developer</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bob Jones</td>
+                        <td>Design</td>
+                        <td>UI/UX Designer</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Total Employees: 2</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- Section: Forms -->
+        <section id="forms">
+            <h2>Forms and Input Elements</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <p>
+                        <label for="fullname">Full Name:</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+                    </p>
+                    
+                    <p>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    
+                    <p>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+                    
+                    <p>Favorite Color:</p>
+                    <label><input type="radio" name="color" value="red"> Red</label><br>
+                    <label><input type="radio" name="color" value="green"> Green</label><br>
+                    <label><input type="radio" name="color" value="blue"> Blue</label>
+                    
+                    <p>Hobbies:</p>
+                    <label><input type="checkbox" name="hobby" value="reading"> Reading</label><br>
+                    <label><input type="checkbox" name="hobby" value="traveling"> Traveling</label><br>
+                    <label><input type="checkbox" name="hobby" value="coding"> Coding</label>
+                    
+                    <p>
+                        <label for="country">Country:</label>
+                        <select id="country" name="country">
+                            <optgroup label="North America">
+                                <option value="us">United States</option>
+                                <option value="ca">Canada</option>
+                            </optgroup>
+                            <optgroup label="Europe">
+                                <option value="uk">United Kingdom</option>
+                                <option value="fr">France</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    
+                    <p>
+                        <label for="comments">Comments:</label><br>
+                        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Submit Form</button>
+                    <button type="reset">Reset</button>
+                </p>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Section: Interactive Elements -->
+        <section id="interactive">
+            <h2>Interactive Elements</h2>
+            
+            <details>
+                <summary>Click to expand for more details</summary>
+                <p>This content is hidden by default and revealed when the user clicks the summary element.</p>
+            </details>
+
+            <p>
+                <label for="file-progress">File upload progress:</label>
+                <progress id="file-progress" value="70" max="100">70%</progress>
+            </p>
+
+            <p>
+                <label for="disk-usage">Disk usage:</label>
+                <meter id="disk-usage" value="0.6" min="0" max="1" low="0.2" high="0.8" optimum="0.5">60%</meter>
+            </p>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Semantic HTML Demo. All rights reserved.</p>
+        <address>
+            Written by <a href="mailto:webmaster@example.com">Webmaster</a>.<br>
+            Visit us at:<br>
+            Example.com<br>
+            Box 564, Disneyland<br>
+            USA
+        </address>
+    </footer>
+
+</body>
+</html>

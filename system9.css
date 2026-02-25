@@ -1,0 +1,78 @@
+body {
+    font-family: "Chicago", sans-serif;
+    background-color: #c0c0c0; /* Classic System 9 desktop gray */
+    color: #000000;
+}
+
+section {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 1px 1px 0 #000000, 2px 2px 0 #000000; /* Simple drop shadow */
+    margin: 20px auto;
+    padding: 0;
+    max-width: 800px;
+    position: relative;
+}
+
+/* The title bar */
+section > h2:first-child {
+    margin: 0;
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    border-bottom: 1px solid #000000;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* The stripes on the left and right of the text */
+section > h2:first-child::before,
+section > h2:first-child::after {
+    content: "";
+    flex-grow: 1;
+    height: 10px;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        #000000,
+        #000000 1px,
+        #ffffff 1px,
+        #ffffff 2px
+    );
+}
+
+section > h2:first-child::before {
+    margin-right: 6px;
+    margin-left: 14px; /* Space for the close box */
+}
+
+section > h2:first-child::after {
+    margin-left: 6px;
+}
+
+/* The close box */
+section::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 11px;
+    height: 11px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    z-index: 2;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+}
+
+/* Inner content padding */
+section > *:not(h2:first-child) {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+section > *:last-child {
+    padding-bottom: 10px;
+}
