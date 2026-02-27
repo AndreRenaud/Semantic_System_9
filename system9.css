@@ -108,7 +108,7 @@ header > p {
 }
 
 section {
-    background-color: #ffffff;
+    background-color: #dddddd;
     border: 1px solid #000000;
     box-shadow: 1px 1px 0 #000000, 2px 2px 0 #000000; /* Simple drop shadow */
     margin: 20px auto;
