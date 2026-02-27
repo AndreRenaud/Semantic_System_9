@@ -306,3 +306,35 @@ meter::-moz-meter-bar {
         linear-gradient(to bottom, #000044 0%, #5555cc 25%, #ffffff 50%, #5555cc 75%, #000044 100%);
 }
 
+/* --- Buttons --- */
+button, 
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"] {
+    font-family: "Chicago", sans-serif;
+    font-size: 14px;
+    color: #000000;
+    background-color: #dddddd;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 2px 12px;
+    cursor: default;
+    box-shadow: 
+        inset 1px 1px 0px #ffffff, /* Top/Left highlight */
+        inset -1px -1px 0px #888888, /* Bottom/Right shadow */
+        1px 1px 0px #ffffff; /* Outer drop shadow highlight */
+    outline: none;
+}
+
+button:active, 
+input[type="button"]:active, 
+input[type="submit"]:active, 
+input[type="reset"]:active {
+    background-color: #aaaaaa;
+    box-shadow: 
+        inset 1px 1px 0px #000000, /* Top/Left dark shadow */
+        inset -1px -1px 0px #ffffff, /* Bottom/Right highlight */
+        1px 1px 0px #ffffff; /* Outer drop shadow highlight */
+}
+
+
