@@ -1,11 +1,22 @@
+@font-face {
+    font-family: "Chicago";
+    src: url('fonts/ChicagoFLF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: "Chicago", sans-serif;
+    font-family: "Geneva", "Tahoma", sans-serif;
     background-color: #636398; /* Classic System 9 desktop blue/purple fallback */
     background-image: url('images/system9-tile.png');
     background-repeat: repeat;
     color: #000000;
     margin: 0; /* Remove default body margin so menubar touches edges */
     padding-top: 24px; /* Space for the fixed menubar */
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+    font-family: "Chicago", sans-serif;
 }
 
 /* --- Menubar (nav inside header) --- */
@@ -22,6 +33,7 @@ header nav {
     align-items: center;
     padding: 0 10px;
     box-shadow: 0 1px 0 #ffffff; /* Subtle highlight below the black border */
+    font-family: "Chicago", sans-serif;
 }
 
 header nav > ul {
