@@ -119,14 +119,15 @@ header > p {
     display: none;
 }
 
-section {
+/* --- Window Sections --- */
+main > section {
     background-color: #dddddd;
     border: 1px solid #000000;
     box-shadow: 1px 1px 0 #000000, 2px 2px 0 #000000; /* Simple drop shadow */
-    margin: 20px auto;
+    margin: 0;
     padding: 0;
     max-width: 800px;
-    position: relative;
+    position: absolute;
     border-radius: 2px;
     resize: both;
     overflow: auto;
@@ -147,6 +148,14 @@ section > h1:first-child {
     position: relative;
     box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #aaaaaa;
     text-shadow: 1px 1px 0 #ffffff; /* System 9 text bevel */
+}
+
+/* Draggable title bar cursor */
+main > section > h1:first-child {
+    cursor: grab;
+}
+main > section > h1:first-child:active {
+    cursor: grabbing;
 }
 
 /* The stripes on the left and right of the text */
